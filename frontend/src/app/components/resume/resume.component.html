@@ -1,0 +1,51 @@
+<div class="container mt-4">
+  <div class="resume-header">
+    <h1 class="text-center">Resume Screening AI-based System</h1>
+    <p class="text-center">
+      This system supports PDF, DOCX, and TXT file uploads and provides the following functionalities:
+    </p>
+    <ul class="text-center">
+      <li>Resume Categorization</li>
+      <li>Resume Job Recommendation</li>
+      <li>Resume Parsing (Information Extraction)</li>
+    </ul>
+  </div>
+
+  <div class="resume-upload mt-4">
+    <h2 class="text-center">Upload Your Resume</h2>
+    <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+      <!-- <input type="file" #fileInput (change)="onFileSelected($event)" accept=".pdf, .txt" required> -->
+      <input type="file" #fileInput (change)="onFileSelected($event)" accept=".pdf, .docx, .txt" required>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <p class="text-center text-success" *ngIf="message">{{ message }}</p>
+
+    <div *ngIf="predictedCategory">
+      <hr>
+      <p class="text-center"><strong>Category:</strong> {{ predictedCategory }}</p>
+      <p class="text-center"><strong>Recommended Job:</strong> {{ recommendedJob }}</p>
+      <hr>
+      <h2 class="text-center">Extracted Information</h2>
+      <p class="text-center"><strong>Name:</strong> {{ name }}</p>
+      <p class="text-center"><strong>Phone No:</strong> {{ phone }}</p>
+      <p class="text-center"><strong>Email:</strong> {{ email }}</p>
+
+      <div *ngIf="extractedSkills?.length">
+        <h3 class="text-center">Skills</h3>
+        <ul class="list-unstyled text-center">
+          <li *ngFor="let skill of extractedSkills">{{ skill }}</li>
+        </ul>
+      </div>
+      <p class="text-center text-danger" *ngIf="!extractedSkills?.length">No skills found...</p>
+
+      <div *ngIf="extractedEducation?.length">
+        <h3 class="text-center">Education</h3>
+        <ul class="list-unstyled text-center">
+          <li *ngFor="let edu of extractedEducation">{{ edu }}</li>
+        </ul>
+      </div>
+      <p class="text-center text-danger" *ngIf="!extractedEducation?.length">No Education found...</p>
+    </div>
+  </div>
+</div>
