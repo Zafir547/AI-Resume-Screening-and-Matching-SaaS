@@ -26,7 +26,7 @@
 
 backend: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
-frontend/my-angular-app: ng serve
+frontend: ng serve
 
 Open the Website locally: http://localhost:4200/
 
