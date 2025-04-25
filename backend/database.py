@@ -5,8 +5,7 @@ import logging
 
 # Replace with your actual Azure PostgreSQL connection details.
 SQLALCHEMY_DATABASE_URL = (
-    # "postgresql://<username>:<password>@<server-name>.postgres.database.azure.com:5432/<database_name>?sslmode=require"
-    "postgresql://zafir:student*123@student-project.postgres.database.azure.com:5432/postgres?sslmode=require"
+    "postgresql://<username>:<password>@<server-name>.postgres.database.azure.com:5432/<database_name>?sslmode=require"
 )
 # Logging enable karein
 logging.basicConfig()
