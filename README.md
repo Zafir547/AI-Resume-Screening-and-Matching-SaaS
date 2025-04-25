@@ -22,11 +22,13 @@
 - Similarity Measure: Cosine Similarity for matching
 - Model Deployment: Integrated in FastAPI
 
-# How to Run code in Terminal:
+# How to Run Code in Terminal:
 
 backend: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
 frontend/my-angular-app: ng serve
+
+Open the Website locally: http://localhost:4200/
 
 
 
