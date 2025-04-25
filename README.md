@@ -24,9 +24,9 @@
 
 # How to Run code in Terminal:
 
-Backend: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+backend: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
-Frontend/my-angular-app: ng serve
+frontend/my-angular-app: ng serve
 
 
 
